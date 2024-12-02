@@ -28,4 +28,7 @@ If you want to run the app from the Python source code:
    ```bash
    git clone https://github.com/naiohmi/nihongo-kana-dictation.git
    cd nihongo-kana-dictation
+
+2. Run python file:
+   ```bash
    python Nihongo-Kana-Dictation.py
