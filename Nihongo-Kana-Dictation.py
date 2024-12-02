@@ -5,6 +5,7 @@ import time
 from threading import Thread
 import json
 import os
+import platform
 
 # Function to load JSON data
 def load_json(file_name):
@@ -13,6 +14,18 @@ def load_json(file_name):
             return json.load(f)
     return {}
 
+# Method to play a beep sound
+def play_beep():
+    if platform.system() == "Windows":
+        # Windows beep sound
+        import winsound
+        winsound.Beep(1000, 200)  # Frequency=1000Hz, Duration=200ms
+    elif platform.system() == "Darwin":
+        # macOS beep sound
+        os.system("say ready")  # Uses built-in `say` command to produce a sound
+    else:
+        # Linux beep sound
+        os.system("echo -e '\a'")  # ASCII bell character
 
 # Main GUI application
 class DictationApp:
@@ -189,6 +202,7 @@ class DictationApp:
         self.button_show_answer.pack_forget()  # Hide the answer button initially
         
         for romanji, char in self.characters_to_display:
+            play_beep()
             self.label_display.config(text=romanji)  # Show only Romanji
             self.start_countdown(wait_time)  # Start the countdown timer
             time.sleep(wait_time)  # Wait dynamically set time
