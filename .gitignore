@@ -1,0 +1,15 @@
+# Ignore build artifacts
+build/
+dist/
+*.spec
+
+# macOS specific
+.DS_Store
+
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore virtual environments
+*.env
+pyinstaller-env/
