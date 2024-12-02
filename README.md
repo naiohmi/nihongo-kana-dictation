@@ -15,12 +15,15 @@ The app provides interactive dictation with features to customize the character 
 - Randomized character selection to enhance learning.
 - Displays results in a scrollable, organized format.
 
-## How to Use
-1. **Download the Executable**:
-   - For macOS: using item in mac folder.
+## Screenshots
 
-2. **Run the App**:
-   - macOS: Double-click the `.app` file.
+**Main Screen**
+
+<img src="screenshot/ss1.png" alt="Main Screen" width="300">
+
+**Results Display**
+
+<img src="screenshot/ss3.png" alt="Results Display" width="300">
 
 ## Running from Source
 If you want to run the app from the Python source code:
