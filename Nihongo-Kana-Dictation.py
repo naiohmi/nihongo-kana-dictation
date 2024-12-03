@@ -7,6 +7,13 @@ import json
 import os
 import platform
 from pathlib import Path
+import ctypes
+
+# Handle blur text in window.
+try:
+    ctypes.windll.shcore.SetProcessDpiAwareness(1)
+except Exception:
+    pass
 
 # Function to load JSON data
 def load_json(file_name):
