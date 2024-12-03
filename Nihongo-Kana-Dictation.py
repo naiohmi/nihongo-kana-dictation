@@ -6,13 +6,20 @@ from threading import Thread
 import json
 import os
 import platform
+from pathlib import Path
 
 # Function to load JSON data
 def load_json(file_name):
-    if os.path.exists(file_name):
-        with open(file_name, "r", encoding="utf-8") as f:
+    # Get the directory where the script is located
+    base_dir = Path(__file__).resolve().parent
+    # Construct the full path to the JSON file
+    full_path = base_dir / file_name
+    
+    if full_path.exists():
+        with open(full_path, "r", encoding="utf-8") as f:
             return json.load(f)
-    return {}
+    else:
+        raise FileNotFoundError(f"JSON file not found: {full_path}")
 
 # Method to play a beep sound
 def play_beep():
